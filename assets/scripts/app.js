@@ -24,21 +24,24 @@ function appendHero(showData) {
 function appendVideoRows(data) {
     const contentElement = document.querySelector('.content')
 
-    const numRows = 4;
-    const squaresPerRow = 3;
+    const numRows = 3;
+    const squaresPerRow = 6;
     
     for (let i = 0; i < numRows; i++) {
-        const row = document.createElement('div');
-        row.classList.add('row');
-        
+        // Create a container for each row
+        const rowContainer = document.createElement('div');
+        rowContainer.classList.add('row-container');
+    
         for (let j = 0; j < squaresPerRow; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
+            square.setAttribute('tabindex', 0)
             square.textContent = 'title';
-            row.appendChild(square);
+            rowContainer.appendChild(square);
         }
-        
-        contentElement.appendChild(row);
+    
+        // Append the row container to the content element
+        contentElement.appendChild(rowContainer);
     }
 
 }
