@@ -1,5 +1,14 @@
 console.log('App is running!')
 
+function appendHeader() {
+    const headerEl = document.querySelector('header');
+
+    buttonEl = document.createElement('button')
+    buttonEl.classList.add('header-button')
+    buttonEl.textContent = "Join Today"
+    headerEl.appendChild(buttonEl)
+}
+
 function appendHero(showData) {
     const { imageData, metaData, title } = showData;
     const hero = document.querySelector('#hero');
@@ -77,6 +86,7 @@ async function render() {
         console.error(error)
         return;
     }
+    appendHeader()
     appendHero(data.shows[0])
     appendVideoRows()
 }

@@ -1,5 +1,6 @@
 :root {
     --primary-color: #dbd8cb;
+    --secondary-color: hotpink;
 }
 
 
@@ -26,6 +27,23 @@ header {
     grid-area: header;
     padding: 10px;
     height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.header-button {
+    padding: 5px;
+    background-color: var(--secondary-color);
+    color: #000;
+    border: none;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.header-button:hover {
+    background-color: var(--primary-color);
 }
 
 /** Hero **/
