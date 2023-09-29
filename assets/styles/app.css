@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #dbd8cb;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header"
+        "hero"
+        "content";
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/** Header**/
+
+header {
+    background-color: #000;
+    grid-area: header;
+    padding: 10px;
+    height: 60px;
+}
+
+/** Hero **/
+#hero {
+    background-color: transparent;
+    grid-area: hero;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    height: 400px;
+}
+
+#hero h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+#hero-content {
+    width: 400px;
+    border-radius: 12px;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+.rating {
+    border: 1px solid #FFF;
+    padding: 3px;
+}
+
+@media screen and (max-width: 767px) {
+    #hero {
+        height: 200px;
+    }
+}
+
+/** Content **/
+
+.content {
+    padding: 20px;
+    grid-area: content;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0;
+}
+
+.square {
+    min-width: 300px;
+    min-height: 150px;
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+    border: 1px solid lightslategrey;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 767px) {
+    .content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
