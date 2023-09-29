@@ -77,6 +77,18 @@ header {
     width: 100%;
 }
 
+.row-container::-webkit-scrollbar {
+    width: 0.5em; /* Adjust the width as needed */
+}
+
+.row-container::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hide the thumb */
+}
+
+.row-container::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide the track */
+}
+
 .square {
     min-width: 300px;
     height: 150px;
