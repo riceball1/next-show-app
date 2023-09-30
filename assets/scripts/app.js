@@ -35,20 +35,27 @@ function appendVideoRows(data) {
 
     const numRows = 3;
     const squaresPerRow = 6;
-    
+
     for (let i = 0; i < numRows; i++) {
         // Create a container for each row
         const rowContainer = document.createElement('div');
         rowContainer.classList.add('row-container');
-    
+        const imageURL = "./assets/images/placeholder.jpeg";
+
         for (let j = 0; j < squaresPerRow; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
             square.setAttribute('tabindex', 0)
-            square.textContent = 'title';
+            const titleEl = document.createElement('div');
+            titleEl.classList.add('square-title');
+            titleEl.innerHTML = '<h3>Drama</h3>';
+            square.appendChild(titleEl);
+            square.style.backgroundImage = `url(${imageURL})`;
+            square.style.backgroundRepeat = "no-repeat";
+            square.style.backgroundSize = "100%";
             rowContainer.appendChild(square);
         }
-    
+
         // Append the row container to the content element
         contentElement.appendChild(rowContainer);
     }
@@ -56,9 +63,9 @@ function appendVideoRows(data) {
 }
 
 
-function updateHero({imageData, metaData, title}) {
+function updateHero({ imageData, metaData, title }) {
     updateHeroImage(imageData.imageUrl)
-    updateHeroContent({title, metaData})
+    updateHeroContent({ title, metaData })
 }
 
 function updateHeroImage(imageUrl) {
@@ -66,7 +73,7 @@ function updateHeroImage(imageUrl) {
     hero.style.backgroundImage = `url(${imageUrl})`;
 }
 
-function updateHeroContent({title, metaData}) {
+function updateHeroContent({ title, metaData }) {
     const hero = document.querySelector('#hero');
     const contentEl = hero.querySelector('.content');
 

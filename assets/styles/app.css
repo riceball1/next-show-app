@@ -11,7 +11,7 @@ body {
     padding: 0;
     background-color: var(--background-color);
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
         "header"
@@ -21,15 +21,18 @@ body {
     box-sizing: border-box;
 }
 
+#header, #hero {
+    width: 100vw;
+}
+
 /** Header**/
 
-header {
+#header {
     background-color: #000;
     grid-area: header;
-    padding: 10px;
+    padding: 10px 30px;
     height: 60px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
 
 }
@@ -41,10 +44,14 @@ header {
     border: none;
     height: 40px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
-.header-button:hover {
+.header-button:hover, .header-button:focus {
     background-color: var(--primary-color);
+    transform: scale(1.1);
+    outline: none;
+    transition: transform 1s ease;
 }
 
 /** Hero **/
@@ -92,7 +99,6 @@ header {
 .row-container {
     display: flex;
     overflow-y: auto;
-    margin-bottom: 10px;
     width: 100%;
 }
 
@@ -111,15 +117,19 @@ header {
 .square {
     min-width: 300px;
     height: 150px;
-    background-color: var(--secondary-color);
-    margin-right: 10px;
-    border: 3px solid transparent;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 12px;
 }
 
-.square:hover {
-    border: 3px solid darkgray;
+.square-title {
+    padding: 5px;
 }
-.square:focus {
+
+.square:hover, .square:focus  {
+    transform: scale(1.1);
+    z-index: 2;
     outline: none;
-    border: 3px solid darkgray;
+    margin-left: 30px;
+    transition: transform 1s ease;
 }
